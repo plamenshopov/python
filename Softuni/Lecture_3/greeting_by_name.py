@@ -1,0 +1,10 @@
+print("Please enter your first name: ")
+first_name = input()
+print("Please enter your last name: ")
+last_name = input()
+print("Please enter your age: " )
+age = int(input())
+print("Please enter your home city: ")
+home_city = input()
+
+print(f' Hello, {first_name} {last_name}! You are a {age}-old person, living in {home_city}. ')
