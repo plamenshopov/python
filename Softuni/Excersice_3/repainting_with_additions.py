@@ -55,9 +55,26 @@ else:
     total_sum_for_working_hours = ((total_sum_for_all_materials * 0.3) * working_hours)
 
 # Output
-print(f'You ordered {int(needed_amount_of_nylon + additional_amount_of_nylon)} sq. meters of nylon and the total price for it will be: {total_sum_for_nylon} USD')
-print(f'The total price for the paint will be: {total_sum_for_paint} USD')
-print(f'The total price for the thinner will be: {total_sum_for_thinner} USD')
+if ask_for_additional_amount_of_nylon == "yes":
+    print(f'You ordered {int(needed_amount_of_nylon + additional_amount_of_nylon)} sq. meters of nylon and the total price for it will be: {total_sum_for_nylon} USD')
+else:
+    print(f'You ordered {int(needed_amount_of_nylon)} sq. meters of nylon and the total price for it will be: {total_sum_for_nylon} USD')
+
+if ask_for_additional_amount_of_paint == "yes":
+    print(f'You ordered {int(needed_liters_of_paint + additional_amount_of_paint)} litres of paint and the total price for it will be: {total_sum_for_paint} USD')
+else:
+    print(f'You ordered {int(needed_liters_of_paint)} litres of paint and the total price for it will be: {total_sum_for_paint} USD')
+
+if ask_for_additional_liters_of_thinner == "yes":
+    print(f'You ordered {int(needed_liters_of_thinner + additional_amount_of_thinner)} litres of thinner and the total price for the thinner will be: {total_sum_for_thinner} USD')
+else:
+    print(f'You ordered {int(needed_liters_of_thinner)} litres of thinner and the total price for the thinner will be: {total_sum_for_thinner} USD')
+
 print(f'The total price for the all needed materials will be: {total_sum_for_all_materials} USD')
-print(f'We need to pay the workers {total_sum_for_working_hours} USD for {working_hours} working hours')
+
+if additional_amount_of_working_hours == "yes":
+    print(f'The workers will work {int(working_hours + additional_amount_of_working_hours)} hours and we need to pay them {total_sum_for_working_hours} USD')
+else:
+    print(f'The workers will work {int(working_hours)} hours and we need to pay them {total_sum_for_working_hours} USD')
+
 print(f'The total amount for the repairs will be: {int(total_sum_for_working_hours + total_sum_for_all_materials)} USD')
